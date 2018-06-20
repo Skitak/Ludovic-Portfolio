@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>{% block title %}Ludovic Moge - Game Designer!{% endblock %}</title>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The game design portfolio of Ludovic Moge">
+        <meta name="keywords" content="ludovic, moge, ludovic moge, design, graphic design, mobile, mobile design, development,developpement, unique, fun, small business, game, design, game design, entreprises, personal, portfolio, jeu, jeu video, video">
+        <link href="{{ asset('build/css/app.css') }}" rel="stylesheet" />
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <header>
+        <div class="title">
+            <h1>LUDOVIC MOGE</h1>
+            <h2>Game designer</h2>
+        </div>
+            <nav>
+                <a class="filled" href="#"><span class="navigation-icon"></a>
+                <div class="loading-bar loading-completed"></div>
+                <a class="filled" href="#"><span class="navigation-icon"></span></a>
+                <div class="loading-bar"></div>
+                <a href="#"><span class="navigation-icon"></a>
+                <div class="loading-bar"></span></div>
+                <a href="#"><span class="navigation-icon"></a>
+            </nav>
+        </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

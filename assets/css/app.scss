@@ -1,0 +1,137 @@
+@import 'fonts';
+
+$primary-color: rgb(212, 212, 212);
+$secondary-color: rgb(146, 216, 193);
+
+* {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+  
+ul {
+    list-style: none;
+}
+
+body, html {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: rgb(255, 255, 255);
+
+    h1 {
+        font-family: "Lora";
+        font-size: 72px;
+        font-weight: lighter;
+    }
+
+    h2 {
+        font-family: "Open Sans";
+        font-size: 24px;
+        font-weight: lighter;
+        color: rgb(216, 216, 216);
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        // background-color: rgb(53, 53, 53);
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top : 30px;
+            padding-left: 30px;
+            color: $primary-color;
+        }
+
+        nav {
+            // $primary-color:  rgb(255, 255, 255);
+            $primary-size: 50px;
+            $secondary-size: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 200px;
+            a{
+                width: $primary-size;
+                height: $primary-size;
+                border-radius: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px $primary-color solid;
+                img {
+                    z-index: 2;
+                    width: $secondary-size;
+                    height: $secondary-size;
+                    stroke: red;
+                }
+                .navigation-icon {
+                    display: flex;
+                    background: url(images/icon.svg);
+                    display: flex;
+                    position: relative;
+                    width: $secondary-size;
+                    height: $secondary-size;
+                    background-size: $secondary-size $secondary-size;
+
+                }
+
+            }
+
+            .filled {
+                border: 2px $secondary-color solid;
+            }
+
+            .loading-bar{
+                width: 100px;
+                height: 2px;
+                background: $primary-color;
+                margin-left: 5px;
+                margin-right: 5px;
+                display: flex;
+                align-items: center;
+                border-radius: 1px;
+            }
+
+            .loading-completed {
+                background: $secondary-color;
+            }
+        }
+    }
+}
+
+.notice {
+    background-color: rgb(235, 235, 235);
+    p{
+        color: black;
+    }
+}
+
+.error{
+    background-color: rgb(173, 18, 18);
+}
+
+.success {
+    background-color: rgb(23, 185, 23);
+}
+.primary {
+    background-color: rgb(24, 65, 199);
+}

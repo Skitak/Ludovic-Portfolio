@@ -2,6 +2,12 @@
 
 {% block body %}
 
+<div class="projects">
+    {% for project in projects %}
+        <div>{{ project.name }}</div>
+    {% endfor %}
+</div>
+
 {% endblock %}
         
 {% block javascripts %}{% endblock %}

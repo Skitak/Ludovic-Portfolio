@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use App\Entity\Project;
 
 class FrontController extends Controller
 {
@@ -20,11 +21,11 @@ class FrontController extends Controller
      *  Front page
      */
     public function index() {
-        // $projects = $this->getDoctrine()
-        // ->getRepository(Project::class)
-        // ->findAll();
+        $projects = $this->getDoctrine()
+        ->getRepository(Project::class)
+        ->findAll();
         return $this->render('front/index.html.twig', [
-            // "projects" => $projects
+            "projects" => $projects
         ]);
     }
 

@@ -49,7 +49,7 @@ class Project
         $this->images = new ArrayCollection();
         $this->name = $name;
         $this->description = $description;
-        $this->displayOrder = 0;
+        $this->displayOrder = rand(100, 10000);
     }
 
     public function getId()

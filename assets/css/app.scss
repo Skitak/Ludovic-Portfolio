@@ -1,153 +1,112 @@
 @import 'layout';
 @import 'back';
-$primary-color: rgb(212, 212, 212);
-$secondary-color: rgb(146, 216, 193);
 
 .front-body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    background: rgb(255, 255, 255);
-
-    h1 {
-        font-family: "Lora";
-        font-size: 72px;
-        font-weight: lighter;
-    }
-
-    h2 {
-        font-family: "Open Sans";
-        font-size: 24px;
-        font-weight: lighter;
-        color: rgb(216, 216, 216);
-    }
-
-    header {
-        width: 100%;
+    align-items: center;
+    width: 100%;
+    .projects {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        // background-color: rgb(53, 53, 53);
-        .title {
+        width: 100%;
+        .primary-project-wrapper{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 1000px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            padding-top : 30px;
-            padding-left: 30px;
-            color: $primary-color;
-        }
-
-        nav {
-            // $primary-color:  rgb(255, 255, 255);
-            $primary-size: 50px;
-            $secondary-size: 40px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
             align-items: center;
-            margin-right: 200px;
-            a{
-                width: $primary-size;
-                height: $primary-size;
-                border-radius: 10%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 2px $primary-color solid;
+            .project{
+                width: 100%;
+                h1 {
+                    color: $primary-color;
+                    padding-left: 50px;
+                    margin: 30px 0px;
+                }
                 img {
-                    z-index: 2;
-                    width: $secondary-size;
-                    height: $secondary-size;
-                    stroke: red;
+                    width: 100%;
                 }
-                .navigation-icon {
-                    display: flex;
-                    background: url(images/icon.svg);
-                    display: flex;
-                    position: relative;
-                    width: $secondary-size;
-                    height: $secondary-size;
-                    background-size: $secondary-size $secondary-size;
-
+                p {
+                    width: 100%;
+                    font-family: $secondary-font;
+                    font-size: 20px;
                 }
-
-            }
-
-            .filled {
-                border: 2px $secondary-color solid;
-            }
-
-            .loading-bar{
-                width: 100px;
-                height: 2px;
-                background: $primary-color;
-                margin-left: 5px;
-                margin-right: 5px;
-                display: flex;
-                align-items: center;
-                border-radius: 1px;
-            }
-
-            .loading-completed {
-                background: $secondary-color;
+    
             }
         }
+
+        hr {
+            width: 80%;
+            height: 1px;
+            background: rgb(170, 170, 170);
+            border: 0;
+            margin: 25px 0px;
+        }
+
+        .secondary-projects-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+            .project {
+                margin: 20px 0px;
+                display: flex;
+                flex-direction: row-reverse;
+                img {
+                    min-width: 450px;
+                    max-width: 450px;
+                }
+                .project-infos {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: right;
+                    font-size: 18px;
+                    h1 {
+                        font-size: 32px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .separator{
+                    margin: 0px 60px;
+                }
+                &:nth-child(4n + 2){
+                    flex-direction: row;
+                    .project-infos {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        .down-arrow{
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            p{
+                text-align: center;
+                margin-bottom: 10px;
+                color: $primary-color;
+                font-family: "Open Sans";
+            }
+            img {
+                width: 75px;
+                margin-bottom: 50px;
+            }
+        }
+
     }
-}
-
-.notice {
-    background-color: rgb(235, 235, 235);
-    p{
-        color: black;
-    }
-}
-
-.error{
-    background-color: rgb(173, 18, 18);
-}
-
-.success {
-    background-color: rgb(23, 185, 23);
-}
-.primary {
-    background-color: rgb(24, 65, 199);
-}
-
-
-form {
-    display: flex;
-    $color: rgb(218, 223, 233);
-    input {
-        border: none;
-        background: $color;
-        height: 35px;
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-
-    textarea {
-        background: $color;
-        border: none;
-        padding: 10px 20px;
-        min-height: 100px;
-        font-size: 16px;
-    }
-
-    div {
-        margin: 10px 0px;
-        padding: 10px;
-
-    }
-
-    button {
-        height: 35px;
-        border-radius: 5px;
-        background-color: white;
-        border: 2px rgb(209, 209, 209) solid;
-        font-size: 14px;
-        &:hover {
-            cursor: pointer;
+    .go-top {
+        $size: 75px;
+        position: fixed;
+        width: $size;
+        height: $size;
+        bottom: 45px;
+        right: 45px;
+        img{
+            width: 100%;
         }
     }
 }

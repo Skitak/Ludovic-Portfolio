@@ -38,7 +38,7 @@ function swapProjectOrder(event){
 
     $.ajax({
         url : window.location.origin + "/admin/project/swapOrder/" + idA + "/" + idB,
-        // success: function (data) {console.log(data)},
+        success: function (data) {console.log(data)},
         error: function (data, sdj, error) {alert(error)}
     })
 

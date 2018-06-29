@@ -358,6 +358,7 @@ $form-account-mini : 600px;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 20px 20px;
         img {
             width: 100px;
         }
@@ -366,10 +367,12 @@ $form-account-mini : 600px;
     .project-wrapper {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-around;
         align-items: flex-start;
         width: 100%;
         .project {
+            margin: 20px 20px;
             width: $project-width;
             height: $project-height;
             border: 1px grey solid;

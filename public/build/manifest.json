@@ -1,7 +1,7 @@
 {
   "build/js/app.js": "/build/js/app.js",
   "build/css/app.css": "/build/css/app.css",
-  "build/fonts/Montserrat-Regular.ttf": "/build/fonts/Montserrat-Regular.f7213526.ttf",
+  "build/fonts/OpenSans-Light.ttf": "/build/fonts/OpenSans-Light.1bf71be1.ttf",
   "build/fonts/Amatic-Regular.ttf": "/build/fonts/Amatic-Regular.c4c98570.ttf",
   "build/fonts/DejaVu-Regular.ttf": "/build/fonts/DejaVu-Regular.49c0f03e.ttf",
   "build/fonts/Fairview-Regular.otf": "/build/fonts/Fairview-Regular.7dc9ef4f.otf",
@@ -10,12 +10,15 @@
   "build/fonts/Lora-Regular.ttf": "/build/fonts/Lora-Regular.c87345ce.ttf",
   "build/fonts/Macondo-Regular.ttf": "/build/fonts/Macondo-Regular.b333aa3c.ttf",
   "build/fonts/Maven-Regular.ttf": "/build/fonts/Maven-Regular.ac039aee.ttf",
+  "build/fonts/Montserrat-Regular.ttf": "/build/fonts/Montserrat-Regular.f7213526.ttf",
+  "build/fonts/Noticia-Regular.ttf": "/build/fonts/Noticia-Regular.23a5b375.ttf",
   "build/fonts/BioRhyme-Regular.ttf": "/build/fonts/BioRhyme-Regular.229cc516.ttf",
-  "build/fonts/OpenSans-Light.ttf": "/build/fonts/OpenSans-Light.1bf71be1.ttf",
   "build/fonts/OpenSans-Regular.ttf": "/build/fonts/OpenSans-Regular.629a55a7.ttf",
   "build/fonts/PT_Sans-Web-Regular.ttf": "/build/fonts/PT_Sans-Web-Regular.f2eadd43.ttf",
   "build/fonts/Poppins-Bold.ttf": "/build/fonts/Poppins-Bold.7940efc4.ttf",
   "build/fonts/PressStart2P-Regular.ttf": "/build/fonts/PressStart2P-Regular.ccb1dfce.ttf",
   "build/fonts/Roboto-Regular.ttf": "/build/fonts/Roboto-Regular.ac3f799d.ttf",
-  "build/images/icon.svg": "/build/images/icon.b2e051dc.svg"
+  "build/images/about.svg": "/build/images/about.c2b0958a.svg",
+  "build/images/home.svg": "/build/images/home.2eaa7622.svg",
+  "build/images/mail.svg": "/build/images/mail.d370b438.svg"
 }

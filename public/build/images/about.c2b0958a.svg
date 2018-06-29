@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="130.40593mm"
+   height="155.93828mm"
+   viewBox="0 0 130.40593 155.93827"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="icon.svg">
+   sodipodi:docname="about.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-384.70384"
-     inkscape:cy="729.51323"
+     inkscape:zoom="0.7"
+     inkscape:cx="82.36986"
+     inkscape:cy="311.65"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,7 +35,11 @@
      inkscape:window-height="1009"
      inkscape:window-x="1920"
      inkscape:window-y="29"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -44,19 +48,20 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-52.977087,-81.612518)">
     <path
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#d4d4d4;stroke-width:14.7;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 8.2380958,147.04601 105,66.159109 201.7619,147.04601 v 83.15478 H 8.2380958 Z"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#d4d4d4;stroke-width:14.69999981;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 118.18005,230.20079 h 57.92398 l -5.76414,-41.164 -32.47726,-5.8288 c 0,0 -3.07489,0.83524 -1.28493,-23.21829 42.17362,-43.68296 6.85042,-71.451039 -18.39765,-71.021761 -25.248075,0.429278 -60.57127,27.338801 -18.39765,71.021761 1.78996,24.05353 -1.28493,23.21829 -1.28493,23.21829 l -32.47726,5.8288 -5.76414,41.164 h 57.92398"
        id="rect819"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc" />
+       sodipodi:nodetypes="ccccczccccc" />
   </g>
 </svg>

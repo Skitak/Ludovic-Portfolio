@@ -1,31 +1,9 @@
-@import 'fonts';
-
+@import 'layout';
+@import 'back';
 $primary-color: rgb(212, 212, 212);
 $secondary-color: rgb(146, 216, 193);
 
-* {
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-}
-  
-ul {
-    list-style: none;
-}
-
-body, html {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-}
-
-body {
+.front-body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -134,4 +112,42 @@ body {
 }
 .primary {
     background-color: rgb(24, 65, 199);
+}
+
+
+form {
+    display: flex;
+    $color: rgb(218, 223, 233);
+    input {
+        border: none;
+        background: $color;
+        height: 35px;
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    textarea {
+        background: $color;
+        border: none;
+        padding: 10px 20px;
+        min-height: 100px;
+        font-size: 16px;
+    }
+
+    div {
+        margin: 10px 0px;
+        padding: 10px;
+
+    }
+
+    button {
+        height: 35px;
+        border-radius: 5px;
+        background-color: white;
+        border: 2px rgb(209, 209, 209) solid;
+        font-size: 14px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }

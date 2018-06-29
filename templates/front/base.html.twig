@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block bodyclass %}front-body{% endblock %}
+{% block stylesheets %}{{ parent() }}{% endblock %}
+{% block header %}
+    <header>
+    <div class="title">
+        <h1>LUDOVIC MOGE</h1>
+        <h2>Game designer</h2>
+    </div>
+        <nav>
+            <a class="filled" href="#"><span class="navigation-icon"></a>
+            <div class="loading-bar loading-completed"></div>
+            <a class="filled" href="#"><span class="navigation-icon"></span></a>
+            <div class="loading-bar"></div>
+            <a href="#"><span class="navigation-icon"></a>
+            <div class="loading-bar"></span></div>
+            <a href="#"><span class="navigation-icon"></a>
+        </nav>
+    </header>
+{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block javascripts %}{% endblock %}

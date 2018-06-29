@@ -1,0 +1,44 @@
+@keyframes come-in {
+    from {
+        width : 0%;
+        height: 0%;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loading {
+    from {
+        left: 10%;
+        border-radius: 3px;
+        -webkit-transform: rotate(-1080deg);
+    }
+    to {
+        border-radius: 10px;
+        left : 80%;
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@keyframes come-from-left{
+    from {
+        left: -270px;
+    }
+    20% {
+        left : 70px;
+    }
+    to {
+        left: 70px;
+    }
+}

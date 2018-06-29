@@ -1,0 +1,41 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}{{parent()}} - Admin{% endblock %}
+
+
+{% block body %}
+<div class="index-wrapper">
+    <h1> Editer projets </h1>
+    <div class="project-wrapper">
+        <a class="ajout" href="{{ path('back_add_project') }}"><img src="{{ asset('/images/croix.svg')}}"/></a>
+        {% for project in projects %}
+            <div class="project">
+                <p class="hidden-id">{{project.id}}</p>
+                
+                <div class="image-wrapper">
+                    <a class="edit" href="{{ path('back_project', {'id' : project.id }) }}">
+                        <img
+                        {% if project.frontImage is not empty %} 
+                            src="{{ asset('/images/projets/' ~ project.frontImage.image) }}"
+                        {% else %}
+                            src="{{ asset('/images/' ~ 'template.jpg')}}"
+                        {% endif %}
+                            alt="project image">
+                    </a>
+                </div>
+                <a class="cross" href="{{ path('back_delete_project', {'id' : project.id }) }}">X</a>
+
+                
+                <div class="project-infos">
+                    <div class="project-infos-centered"> 
+                        <h1> {{ project.name }} </h1>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+

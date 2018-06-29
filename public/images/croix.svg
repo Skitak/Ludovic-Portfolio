@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="icon secondary.svg">
+   sodipodi:docname="croix.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-738.98955"
-     inkscape:cy="526.65609"
+     inkscape:zoom="0.175"
+     inkscape:cx="-1019.1847"
+     inkscape:cy="183.03236"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -52,11 +52,24 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       style="opacity:1;fill:#d4d4d4;fill-opacity:1;stroke:#92d8c1;stroke-width:14.7;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 8.2380958,147.04601 105,66.159109 201.7619,147.04601 v 83.15478 H 8.2380958 Z"
-       id="rect819"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc" />
+    <rect
+       style="opacity:1;fill:#bfbfbf;fill-opacity:1;stroke:none;stroke-width:9.92363358;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect815"
+       width="181.42856"
+       height="32.521698"
+       x="14.285719"
+       y="132.23915"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       y="91.062126"
+       x="-254.33333"
+       height="27.875742"
+       width="211.66666"
+       id="rect817"
+       style="opacity:1;fill:#bfbfbf;fill-opacity:1;stroke:none;stroke-width:9.92363358;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="rotate(-90)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>

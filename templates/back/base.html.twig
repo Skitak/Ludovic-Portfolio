@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block bodyclass %}back-body{% endblock %}
+{% block header %}
+    <header>
+        <nav>
+            <div class="centered-box">
+                <a href="{{ path('index') }}">Accueil</a>
+                <a href="{{ path('back_index') }}">Menu adminitration</a>
+                <a href="{{ path('back_about') }}">Personnalisation</a>
+                <a href="{{ path('back_account') }}">Compte</a>
+                <a href="{{ path('logout') }}">Se déconnecter</a>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+
+{% block body %} {{ parent() }} {% endblock %}

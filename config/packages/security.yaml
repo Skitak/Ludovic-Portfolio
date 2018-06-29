@@ -1,14 +1,33 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    access_denied_url: /login
     providers:
-        in_memory: { memory: ~ }
+        my_db_provider: 
+            entity:
+                class: App\Entity\User
+                property: username
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            anonymous: ~
+            form_login:
+                check_path: /login
+                login_path: /login
+                always_use_default_target_path: true
+                default_target_path: /admin
+            logout:
+                path: /logout
+                target: /
+            provider: my_db_provider
 
+        
+        
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+            # cost: 12
             # activate different ways to authenticate
 
             # http_basic: true
@@ -20,5 +39,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

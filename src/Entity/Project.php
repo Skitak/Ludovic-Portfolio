@@ -46,7 +46,7 @@ class Project
 
     public function __construct($name = "Nouveau projet", $description = "description du projet")
     {
-        $this->artworks = new ArrayCollection();
+        $this->images = new ArrayCollection();
         $this->name = $name;
         $this->description = $description;
         $this->displayOrder = 0;
@@ -108,30 +108,30 @@ class Project
     }
 
     /**
-     * @return Collection|Artwork[]
+     * @return Collection|Image[]
      */
-    public function getArtworks(): Collection
+    public function getImages(): Collection
     {
-        return $this->artworks;
+        return $this->images;
     }
 
-    public function addArtwork(Artwork $artwork): self
+    public function addImage(Image $image): self
     {
-        if (!$this->artworks->contains($artwork)) {
-            $this->artworks[] = $artwork;
-            $artwork->setProject($this);
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setProject($this);
         }
 
         return $this;
     }
 
-    public function removeArtwork(Artwork $artwork): self
+    public function removeArtwork(Image $image): self
     {
-        if ($this->artworks->contains($artwork)) {
-            $this->artworks->removeElement($artwork);
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
             // set the owning side to null (unless already changed)
-            if ($artwork->getProject() === $this) {
-                $artwork->setProject(null);
+            if ($image->getProject() === $this) {
+                $image->setProject(null);
             }
         }
 

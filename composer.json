@@ -8,6 +8,7 @@
         "symfony/annotations-pack": "^1.0",
         "symfony/asset": "^4.1",
         "symfony/console": "^4.1",
+        "symfony/dotenv": "^4.1",
         "symfony/expression-language": "^4.1",
         "symfony/flex": "^1.0",
         "symfony/form": "^4.1",
@@ -24,11 +25,11 @@
         "symfony/validator": "^4.1",
         "symfony/web-link": "^4.1",
         "symfony/webpack-encore-pack": "*",
-        "symfony/yaml": "^4.1"
+        "symfony/yaml": "^4.1",
+        "gumlet/php-image-resize": "1.9.*"
     },
     "require-dev": {
         "symfony/debug-pack": "*",
-        "symfony/dotenv": "^4.1",
         "symfony/maker-bundle": "^1.5",
         "symfony/profiler-pack": "*",
         "symfony/test-pack": "^1.0",

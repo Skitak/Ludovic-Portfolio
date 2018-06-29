@@ -1,0 +1,16 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}{{parent()}} - A propos{% endblock %}
+
+{% block body %}
+
+
+<div class="about-wrapper">
+
+    <h1>Menu personalisation</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+</div>
+{% endblock %}

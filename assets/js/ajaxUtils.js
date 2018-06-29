@@ -4,6 +4,8 @@
 
 import {notice, error} from './notifications';
 
+let isLoading = false
+
 export function ajaxForm(formName, successDataFunction = null) {
     $('form[name="'+ formName + '"]').on('submit', function (event) {
         event.preventDefault()
@@ -27,7 +29,10 @@ export function ajaxForm(formName, successDataFunction = null) {
 }
 function loading(formName){
     $('form[name="'+ formName + '"]').find('button[type="submit"]').addClass("loading").attr("disabled", true)
-    
+}
+
+function loadingMiscelaniou(){
+
 }
 
 function ajaxSuccess(data, formName, successDataFunction){
@@ -62,6 +67,9 @@ function ajaxError( errorForm, formName) {
 export function ajaxDelete(selector, parentHeight = 0, demandConfirmation = true) {
     selector.on("click", function (){
         event.preventDefault()
+        if (isLoading)
+            return
+        isLoading = true
         if (demandConfirmation && !confirm("Voulez vous vraiment faire ça?"))
             return
         let urlDelete = $(this).prop('href')
@@ -72,9 +80,11 @@ export function ajaxDelete(selector, parentHeight = 0, demandConfirmation = true
                 for(let height = parentHeight; height > 0; height--)
                     div = div.parent() 
                 div.remove()
+                isLoading = false;
             },
             error: function (data,fsd,error){
                 alert (error)
+                isLoading = false;
             }
         })
     })

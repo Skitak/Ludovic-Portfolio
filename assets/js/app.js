@@ -4,11 +4,12 @@ import projectForm from './project'
 import admin from './admin'
 import email from './email'
 import account from './account'
+import indexFocus from './index'
 import {notifications} from './notifications'
 
 
 $( document ).ready(function (){
-    
+    indexFocus()
     aboutForm()
     projectForm()
     admin()

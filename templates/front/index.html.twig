@@ -4,68 +4,17 @@
 
 <div class="projects">
     <div class="primary-project-wrapper">
-        <div class="project">
-            <img src="{{ asset('/images/projets/' ~ projects[0].frontImage.image) }}"/>
-            <div class="project-infos">
-                <div class="summary">
-                    <h1>{{ projects[0].name }}</h1>
-                    <p>{{ projects[0].summary }}</p>
-                </div>
-                <hr/>
-                <div class="meta-data">
-                    <p>{{ projects[0].date|date("M Y") }}</p>
-                    <p class="context">Projet {{ projects[0].context.value }} </p>
-                    <p class="role">en tant que {% for role in projects[0].roles %}
-                    {{ role.value }} {% if not loop.last %} - {% endif %}
-                    {% endfor %}</p>
-                    <p></p>
-                </div>
-            </div>
-        </div>
+        {% include 'front/project-summary.html.twig' with { "project" : projects[0]} %}
     </div>
     <hr/>
     <div class="secondary-projects-wrapper">
         {% for i in range(1, 2) %}
-            <div class="project">
-                <img src="{{ asset('/images/projets/' ~ projects[i].frontImage.image) }}"/>
-                <div class="project-infos">
-                    <div class="summary">
-                        <h1>{{ projects[i].name }}</h1>
-                        <p>{{ projects[i].summary }}</p>
-                    </div>
-                    <hr/>
-                    <div class="meta-data">
-                        <p>{{ projects[i].date|date("M Y") }}</p>
-                        <p class="context">Projet {{ projects[i].context.value }} </p>
-                        <p class="role">en tant que {% for role in projects[0].roles %}
-                        {{ role.value }} {% if not loop.last %} - {% endif %}
-                        {% endfor %}</p>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
+            {% include 'front/project-summary.html.twig' with { "project" : projects[i]} %}
         {% endfor %}
     </div>
     <div class="all-projects-wrapper">
         {% for i in range(3, projects|length - 1) %}
-            <div class="project">
-                <img src="{{ asset('/images/projets/' ~ projects[i].frontImage.image) }}"/>
-                <div class="project-infos">
-                    <div class="summary">
-                        <h1>{{ projects[i].name }}</h1>
-                        <p>{{ projects[i].summary }}</p>
-                    </div>
-                    <hr/>
-                    <div class="meta-data">
-                        <p>{{ projects[i].date|date("M Y") }}</p>
-                        <p class="context">Projet {{ projects[i].context.value }} </p>
-                        <p class="role">en tant que {% for role in projects[0].roles %}
-                        {{ role.value }} {% if not loop.last %} - {% endif %}
-                        {% endfor %}</p>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
+            {% include 'front/project-summary.html.twig' with { "project" : projects[i]} %}
         {% endfor %}
     </div>
 </div>

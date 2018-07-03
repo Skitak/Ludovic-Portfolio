@@ -1,0 +1,18 @@
+<div class="project">
+    <a class="id" href="{{path('project', {'id' : project.id })}}"></a>
+    <img src="{{ asset('/images/projets/' ~ project.frontImage.image) }}"/>
+    <div class="project-infos">
+        <div class="summary">
+            <h1>{{ project.name }}</h1>
+            <p>{{ project.summary }}</p>
+        </div>
+        <hr/>
+        <div class="meta-data">
+            <p>{{ project.date|date("M Y") }}</p>
+            <p class="context">Projet {{ project.context.value }} </p>
+            <p class="role">en tant que {% for role in project.roles %}
+            {{ role.value }} {% if not loop.last %} - {% endif %}
+            {% endfor %}</p>
+        </div>
+    </div>
+</div>

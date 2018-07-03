@@ -1,0 +1,17 @@
+<div class="front-project-wrapper">
+    <article class="front-project">
+        <div class="image-wrapper">
+            <img src="{{ asset('/images/projets/' ~ project.frontImage.image) }}"/>
+        </div>
+        <header> <h1>{{ project.name }}</h1> 
+            <div class="meta-data">
+                <p>{{ project.date|date("M Y") }}</p>
+
+                <p class="role">en tant que {% for role in project.roles %}
+                {{ role.value }} {% if not loop.last %} - {% endif %}
+                {% endfor %}</p>
+            </div>
+        </header>
+        <p class="description">{{ project.description }}</p>
+    </article>
+</div>

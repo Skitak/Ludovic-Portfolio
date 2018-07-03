@@ -6,16 +6,16 @@
     <div class="primary-project-wrapper">
         <div class="project">
             <img src="{{ asset('/images/projets/' ~ projects[0].frontImage.image) }}"/>
-            <h1>{{ projects[0].name }}</h1>
-            <p>{{ projects[0].description }}</p>
+            <div class="project-infos">
+                <h1>{{ projects[0].name }}</h1>
+                <p>{{ projects[0].description }}</p>
+            </div>
         </div>
     </div>
     <div class="secondary-projects-wrapper">
-        {% for i in range(1, 4) %}
-            <hr/>
+        {% for i in range(1, 2) %}
             <div class="project">
                 <img src="{{ asset('/images/projets/' ~ projects[i].frontImage.thumbnail) }}">
-                <div class="separator"></div>
                 <div class="project-infos">
                     <h1>{{ projects[i].name }}</h1>
                     <p>{{ projects[i].description }}</p>
@@ -23,14 +23,13 @@
             </div>
         {% endfor %}
     </div>
-    <a class="down-arrow" href="#"><p>Voir tous les jeux</p><img src="{{asset('/images/down-arrow.svg')}}"></a>
-    {# <div class="all-projects-wrapper">
-        {% for i in range(5, projects|length - 1) %}
+    <div class="all-projects-wrapper">
+        {% for i in range(3, projects|length - 1) %}
             <div class="project">
-                {{ projects[i].name }}
+                <img src="{{ asset('/images/projets/' ~ projects[i].frontImage.thumbnail) }}">
             </div>
         {% endfor %}
-    </div> #}
+    </div>
 </div>
 
 <a class="go-top" href="#"><img src="images/arrow-top.svg"></a>

@@ -27,7 +27,7 @@ class ImageCompressor {
 
     public function resizeImage($filePath, $fileName){ 
         $image = new ImageResize($filePath . $fileName);
-        $image->resizeToWidth(1600, true);
+        $image->resize(1600, 900);
         $image->save($filePath . $fileName);
         return $filePath;
     }

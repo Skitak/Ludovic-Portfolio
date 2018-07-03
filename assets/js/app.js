@@ -5,6 +5,7 @@ import admin from './admin'
 import email from './email'
 import account from './account'
 import indexFocus from './index'
+import arrowUp from './scroll'
 import {notifications} from './notifications'
 
 
@@ -15,6 +16,7 @@ $( document ).ready(function (){
     admin()
     email()
     account()
+    arrowUp()
 })
 
 

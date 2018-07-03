@@ -19,8 +19,8 @@
     </div>
 </div>
 
-<a class="go-top" href="#"><img src="images/arrow-top.svg"></a>
+<div class="go-top"><img src="images/arrow-top.svg"><div>
 
 {% endblock %}
         
-{% block javascripts %}{% endblock %}
+{% block javascripts %} {{ parent() }} {% endblock %}

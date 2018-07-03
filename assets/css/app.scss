@@ -22,9 +22,11 @@
         }
         .project {
             flex-direction: column;
+            box-shadow: 0px 0px 0px black;
             &:hover{
                 .project-infos{
                     opacity: 1;
+                    box-shadow: 0px 0px 15px rgb(153, 153, 153);
                 }
             }
             img {
@@ -42,7 +44,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
-                background: linear-gradient(0deg, rgba(255, 255, 255, 0.493) , rgba(255, 255, 255, 0.103));
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) , rgba(0, 0, 0, 0));
                 transition: all 0.1s linear;
                 hr{
                     margin: 0px 0px;
@@ -57,14 +59,14 @@
                     align-items: flex-end;
                     justify-content: flex-start;
                     h1 {
-                        color: rgb(78, 78, 78);
+                        color: rgb(241, 241, 241);
                         font-family: $secondary-font;
                         font-size: 28px;
                         margin: 0px 0px 0px 50px;
                     }
                     p {
                         font-size: 14px;
-                        color: rgb(78, 78, 78);
+                        color: rgb(231, 231, 231);
                         padding-bottom: 4px;
                         padding-left: 50px;
                         // padding: 0px 120px;
@@ -80,7 +82,7 @@
                     width: 100%;
                     p {
                         font-size: 12px;
-                        color: rgb(78, 78, 78);
+                        color: rgb(161, 161, 161);
                     }
                     .context{
                         padding-left: 5px;
@@ -153,14 +155,20 @@
         bottom: 45px;
         right: 45px;
         opacity: 0.5;
+        transition: all 0.1s;
+        z-index: 3;
         img{
             width: 100%;
+        }
+        &:hover{
+            opacity: 1;
         }
     }
 }
 
 .front-project-wrapper {
-    position: absolute;
+    overflow-y: scroll;
+    position: fixed;
     top:0px;
     display: flex;
     flex-direction: column;
@@ -172,6 +180,7 @@
     .front-project{
         color: rgb(77, 77, 77);
         margin-top: 50px;
+        margin-bottom: 50px;
         width: 1000px;
         background-color: white;
         box-shadow: 0px 0px 15px black;
@@ -212,4 +221,12 @@
 
 
     }
+}
+
+.not-scrollable{
+    overflow-y: hidden;
+}
+
+.not-visible {
+    display: none;
 }

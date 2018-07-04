@@ -226,7 +226,15 @@
 .loading-icon {
     width: 200px;
     height: 200px;
-    background: white;
+    background-size: 100% 100%;
+    background: url("images/chargement.png") ;
+    animation: rotation 1s cubic-bezier(0.28, 0.56, 0.75, 0.53) 0s infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    
 }
 
 .not-scrollable{

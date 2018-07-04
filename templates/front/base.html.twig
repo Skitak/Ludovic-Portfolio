@@ -3,10 +3,15 @@
 {% block stylesheets %}{{ parent() }}{% endblock %}
 {% block header %}
     <header>
-    <div class="title">
-        <h1>Ludovic Moge</h1>
-        <h2>Game designer</h2>
-    </div>
+        <div class="title">
+            <h1>Ludovic Moge</h1>
+            <h2>Game designer</h2>
+        </div>
+        <nav>
+            <a class="Filter">FILTRE</a>
+            <a class="contact-button" href="{{path('contact')}}">CONTACT</a>
+            <a class="resume" href="{{path('cv')}}">RESUME</a>
+        </nav>
     </header>
 {% endblock %}
 

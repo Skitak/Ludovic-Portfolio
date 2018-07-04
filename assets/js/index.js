@@ -1,39 +1,18 @@
+import {ajaxFetchInformations} from "./ajaxUtils"
+
 export default function indexFocus(){
-    fetchProjectInformations()
+    setupWrapper()
+    ajaxFetchInformations($(".id"), ".front-project-wrapper")
     upArrow()
 }
 var isArrowVisible = false
 
-function fetchProjectInformations(){
-    let obj = $(".id") 
-    obj.on("click", function(e){
-        e.preventDefault()
-        putLoadingIcon()
-        let urlIndex = $(this).prop("href")
-        $.ajax({
-            url: urlIndex,
-            success: function (data){
-                $(".front-project-wrapper").html(data)
-                addEvents()
-            },
-            error: function (data,fsd,error){
-                alert (error)
-            }
-        })
-    })
-    
-}
-
-function addEvents(){
+function setupWrapper(){
     $(".front-project-wrapper").on("click", function(){
-        $(this).remove()
-    })
-    $(".front-project").on("click", function(e){
-        e.stopPropagation()
+        $(this).addClass("not-visible")
     }).on("scroll", function(e){
-        e.stopPropagation()
+        e.preventDefault()
     })
-    fetchProjectInformations()
 }
 
 function upArrow(){
@@ -47,14 +26,6 @@ function upArrow(){
             $(".go-top").addClass("not-visible");
             isArrowVisible = false
         }
-        console.log(newPosition)
 
     })
-}
-
-function putLoadingIcon(){
-    document.body.innerHTML +=
-    "<div class='front-project-wrapper'>" +
-    "<div class='loading-icon'></div>" + 
-    "</div>"
 }

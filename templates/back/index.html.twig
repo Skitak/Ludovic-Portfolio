@@ -16,7 +16,7 @@
                     <a class="edit" href="{{ path('back_project', {'id' : project.id }) }}">
                         <img
                         {% if project.frontImage is not empty %} 
-                            src="{{ asset('/images/projets/' ~ project.frontImage.image) }}"
+                            src="{{ asset('/images/projets/' ~ project.frontImage.thumbnail) }}"
                         {% else %}
                             src="{{ asset('/images/' ~ 'template.jpg')}}"
                         {% endif %}

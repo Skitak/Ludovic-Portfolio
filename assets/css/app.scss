@@ -177,8 +177,8 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.295);
+    color: rgb(77, 77, 77);
     .front-project{
-        color: rgb(77, 77, 77);
         margin-top: 50px;
         margin-bottom: 50px;
         width: 1350px;
@@ -208,12 +208,14 @@
             .meta-data {
                 padding-bottom: 7px;
                 padding-left: 30px;
+                .context{
+                    padding-left: 15px;
+                }
                 .role {
                     padding-left: 5px;
                 }
             }
         }
-
 
         .description {
             padding: 0px 100px 70px 120px;
@@ -221,6 +223,39 @@
         }
 
 
+    }
+}
+
+.front-contact {
+    width: 1000px;
+    margin: 80px 0px;
+    background: white;
+    .about-me{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 50px 60px;
+    
+        img {
+            margin-top: 50px;
+            width: 300px;
+            border-radius: 100%;
+            align-self: center;
+        }
+    
+        h1 {
+            font-family: "Open Sans";
+            margin: 50px 0px;
+        }
+    
+        p {
+            // display: flex;
+            font-family: "Open Sans";
+            font-size: 18px;
+            line-height: 36px;
+            height: 100%;
+        }
     }
 }
 
@@ -235,6 +270,10 @@
     left: 50%;
     margin-top: -100px;
     margin-left: -100px;
+    h1{
+        margin-top: 40px;
+    }
+
     
 }
 

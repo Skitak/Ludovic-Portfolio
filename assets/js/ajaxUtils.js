@@ -89,3 +89,28 @@ export function ajaxDelete(selector, parentHeight = 0, demandConfirmation = true
         })
     })
 }
+
+export function ajaxFetchInformations(link, wrapper){
+    link.on("click", function(e){
+        e.preventDefault()
+        putLoadingIcon(wrapper)
+        let urlIndex = $(this).prop("href")
+        $.ajax({
+            url: urlIndex,
+            success: function (data){
+                $(wrapper).html(data).children().on("click", function(e){
+                    e.stopPropagation()
+                })
+            },
+            error: function (errorMessage){
+                error(errorMessage)
+                $(wrapper).addClass("not-visible")
+            }
+        })
+    })
+}
+
+function putLoadingIcon(wrapper){
+    $(wrapper).html("<div class='loading-icon'></div>").removeClass("not-visible")
+    
+}

@@ -1,0 +1,17 @@
+<article class="front-contact">
+    <div class="about-me">
+        <img src="{{ asset('images/profil.jpg')}}">
+        <h1>{{ user.aboutTitle }}</h1>
+        <p>{{ user.about }}</p>
+    </div>
+    <div class="contact">
+        <h1>Contactez-moi</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+    <div class="resume">
+        <h1>CV</h1>
+        
+    </div>
+</article>

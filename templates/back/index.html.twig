@@ -24,14 +24,7 @@
                     </a>
                 </div>
                 <a class="cross" href="{{ path('back_delete_project', {'id' : project.id }) }}">X</a>
-
-                
-                <div class="project-infos">
-                    <div class="project-infos-centered"> 
-                        <h1> {{ project.name }} </h1>
-
-                    </div>
-                </div>
+                <h1> {{ project.name }} </h1>
             </div>
         {% endfor %}
     </div>

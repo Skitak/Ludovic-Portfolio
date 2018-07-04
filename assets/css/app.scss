@@ -188,6 +188,23 @@
         }
 
     }
+
+    .filtered{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 90%;
+        hr{
+            display: none;
+        }
+
+        .project{
+            width: 32%;
+            margin: 30px 0px;
+        }
+    }
+
     .go-top {
         $size: 75px;
         position: fixed;

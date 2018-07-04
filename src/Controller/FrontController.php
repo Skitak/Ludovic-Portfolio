@@ -15,6 +15,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use App\Entity\Project;
 use App\Entity\User;
+use App\Entity\Role;
+use App\Entity\Context;
 
 class FrontController extends Controller
 {
@@ -27,8 +29,16 @@ class FrontController extends Controller
         $projects = $this->getDoctrine()
         ->getRepository(Project::class)
         ->findAll();
+        $roles = $this->getDoctrine()
+        ->getRepository(Role::class)
+        ->findAll();
+        $contexts = $this->getDoctrine()
+        ->getRepository(Context::class)
+        ->findAll();
         return $this->render('front/index.html.twig', [
-            "projects" => $projects
+            "projects" => $projects,
+            "contexts" => $contexts,
+            "roles" => $roles
         ]);
     }
 
@@ -49,6 +59,7 @@ class FrontController extends Controller
         $form = $this->createFormBuilder($data)
             ->add('nom' , TextType::class, ['constraints' => new NotBlank()])
             ->add('email', EmailType::class, ['constraints' => new NotBlank()])
+            ->add('objet' , TextType::class, ['constraints' => new NotBlank()])
             ->add('message', TextareaType::class, ['constraints' => new NotBlank()])
             ->add('envoyer' , SubmitType::class)
             ->getForm();

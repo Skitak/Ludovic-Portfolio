@@ -1,7 +1,19 @@
 {% extends 'front/base.html.twig' %}
 
 {% block body %}
-
+<div class="filters-menu">
+    <div class="context">
+        {% for context in contexts %}
+            <p class="filter-button">{{ context.value }}</p>
+        {% endfor %}
+    </div>
+    <hr/>
+    <div class="roles">
+        {% for role in roles %}
+            <p class="filter-button">{{ role.value }}</p>
+        {% endfor %}
+    </div>
+</div>
 <div class="projects">
     <div class="primary-project-wrapper">
         {% include 'front/project-summary.html.twig' with { "project" : projects[0]} %}

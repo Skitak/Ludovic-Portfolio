@@ -7,6 +7,7 @@ import account from './account'
 import indexFocus from './index'
 import arrowUp from './scroll'
 import contact from './contact'
+import filter from './filter'
 import {notifications} from './notifications'
 
 
@@ -19,6 +20,7 @@ $( document ).ready(function (){
     account()
     arrowUp()
     contact()
+    filter()
 })
 
 

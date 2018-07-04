@@ -2,7 +2,7 @@
 @import 'animations';
 
 $primary-color: rgb(180, 180, 180);
-$secondary-color: rgb(146, 216, 193);
+$secondary-color: rgb(120,192,168);
 
 $primary-font: "Noticia";
 $secondary-font: "Open Sans";
@@ -282,6 +282,20 @@ form {
     flex-direction: column;
     justify-content: flex-start;
     background: rgb(255, 255, 255);
+
+    .filter{
+        cursor: pointer;
+        &:hover{
+            color: $secondary-color;
+        }
+    }
+
+    .active {
+        color: $secondary-color;
+        &:hover{
+            color: white;
+        }
+    }
 
     h1 {
         font-family: $primary-font;

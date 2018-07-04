@@ -300,83 +300,22 @@ form {
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         background-color: rgb(92, 92, 92);
         .title {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             color: white;
-            margin: 20px 0px;
+            margin: 5px 0px 10px 200px;
 
             h1 {
-                font-size: 48px;
+                font-size: 32px;
             }
             h2 {
-                font-size: 24px;
+                font-size: 18px;
                 color: rgb(223, 223, 223);
-            }
-        }
-
-        nav {
-            // $primary-color:  rgb(255, 255, 255);
-            $primary-size: 50px;
-            $secondary-size: 40px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            margin-right: 200px;
-            a{
-                width: $primary-size;
-                height: $primary-size;
-                border-radius: 10%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 2px $primary-color solid;
-                .navigation-icon {
-                    display: flex;
-                    position: relative;
-                    width: $secondary-size - 5;
-                    height: $secondary-size - 5;
-                }
-                .home{
-                    background: url(images/home.svg);
-                    background-size: ($secondary-size - 5) ($secondary-size - 5);
-                    background-repeat: no-repeat;
-                }
-                .about{
-                    background: url(images/about.svg);
-                    background-size: ($secondary-size - 5) ($secondary-size - 5);
-                    background-repeat: no-repeat;
-                }
-                .contact{
-                    background: url(images/mail.svg);
-                    background-size: ($secondary-size - 5) ($secondary-size - 5);
-                    background-repeat: no-repeat;
-                }
-
-            }
-
-            .filled {
-                border: 2px $secondary-color solid;
-            }
-
-            .loading-bar{
-                width: 100px;
-                height: 2px;
-                background: $primary-color;
-                margin-left: 5px;
-                margin-right: 5px;
-                display: flex;
-                align-items: center;
-                border-radius: 1px;
-            }
-
-            .loading-completed {
-                background: $secondary-color;
             }
         }
     }

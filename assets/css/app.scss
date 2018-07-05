@@ -273,8 +273,12 @@
         }
 
         .description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             padding: 0px 100px 70px 120px;
             line-height: 36px;
+            margin-top: 40px;
         }
 
 
@@ -432,4 +436,68 @@
 
 .not-visible {
     display: none;
+}
+
+.quill-edit, .ql-editor{
+    font-family: "Open Sans";
+    color: black;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    h1, h2 {
+        color: black;
+        text-align: left;
+        font-family: "Open Sans";
+        font-weight: normal;
+    }
+    h1{
+        font-size: 38px;
+    }
+    h2{
+        font-size: 28px;
+    }
+    p{
+        flex-shrink: 1;
+        // font-size: 16px;
+        width: 100%;
+        height: auto;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    p.ql-align-center {
+        text-align: center;
+    }
+    p.ql-align-right {
+        text-align: right;
+    }
+    .ql-size-small{
+        font-size: 12px;
+    }
+    .ql-size-large{
+        font-size: 20px;
+    }
+    .ql-size-huge{
+        font-size: 24px;
+    }
+    ol, ul{
+        padding-left: 40px;
+        li{
+            padding-left: 10px;
+        }
+    }
+    ul{
+        list-style: initial;
+    }
+    a {
+        color: $secondary-color;
+        text-decoration: underline;
+    }
+    *{
+        white-space: pre;
+        color: black;
+    }
+    img{
+        align-self: center;
+        max-width: 800px;
+        max-height: 450px;
+    }
 }

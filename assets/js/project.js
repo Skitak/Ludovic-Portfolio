@@ -1,7 +1,10 @@
 import {ajaxForm, ajaxDelete} from './ajaxUtils';
+import Quill from "quill"
 
 export default function projectForm() { 
-    // ProjectDynamicEditing()
+    if( !$('.project-edit-wrapper').length)
+        return
+    projectEditing()
     ajaxForm("project_form")
     ajaxForm("artwork_form", function (data) {
         // let array = JSON.parse(data[0])
@@ -17,17 +20,28 @@ export default function projectForm() {
     
 }   
 
-function ProjectDynamicEditing(){
-    let formTitle = $("#project_form_name")
-    let formDescription = $("#project_form_description")
-
-    formTitle.keyup(function(){
-        $(".project h1").text($(this).val())  
+function projectEditing(){
+    let options = {
+        modules: {
+            toolbar:[
+                ['bold', 'italic', 'underline'],
+                ['link', 'image'],
+                [{ 'header': 1 }, { 'header': 2 }],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                [{ 'size': ['small', false, 'large', 'huge'] }],
+                [{ 'color': []}],
+                [{ 'align': [] }],
+            ]
+        },
+        placeholder : "Description ici",
+        theme: "snow"
+    }
+    let editor = new Quill($("#description-editor").get(0), options)
+    $("#description-editor .ql-editor").html($(".description-input").val())
+    editor.on('text-change', function(delta, onDelta, source){
+        $(".description-input").val($("#description-editor .ql-editor").html())
     })
 
-    formDescription.keyup(function(){
-        $(".project p").text($(this).val())  
-    })
 }
 
 function addArtwork(artwork){

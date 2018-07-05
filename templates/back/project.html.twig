@@ -2,6 +2,12 @@
 
 {% block title %}{{parent()}} - {{ project.name }}{% endblock %}
 
+{% block stylesheets %}
+{{parent()}}
+<link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+<link href="https://cdn.quilljs.com/1.0.0/quill.bubble.css" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
 <a class="return" href="{{ path('back_index') }}"><img src="{{ asset('/images/fleche.svg')}}"/></a>
 <div class="project-edit-wrapper">
@@ -14,11 +20,20 @@
             {% endif %}
         </div>
         {{ form_start(project_form) }}
-        {{ form_widget(project_form) }}
-        {{ form_end(project_form) }}
-        <div class="project">
-
+        {{ form_row(project_form.name)}}
+        {{ form_row(project_form.summary)}}
+        <div class="meta-data">
+        {{ form_row(project_form.date)}}
+        {{ form_row(project_form.roles)}}
+        {{ form_row(project_form.context)}}
         </div>
+        <div class="not-visible-description">
+        {{ form_row(project_form.description, {"class" : "description-input"}) }}
+        </div>
+        <div class="description-editor-wrapper">
+            <div id="description-editor"></div>
+        </div>
+        {{ form_end(project_form) }}
     </div>
     <div class="project-gallery">
         <h2>Images associés</h2>
@@ -39,4 +54,8 @@
     </div>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
 {% endblock %}

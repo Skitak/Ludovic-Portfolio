@@ -15,6 +15,13 @@
     </header>
 {% endblock %}
 
+{% block footer %}
+    <footer>
+        <div class="centered">
+            <p>© {{ "now"|date("Y")}} ludovicmoge.com - Ludovic Moge</p>
+        </div>
+    </footer>
+{% endblock %}
 {% block body %}{% endblock %}
 
 {% block javascripts %} {{ parent() }} {% endblock %}

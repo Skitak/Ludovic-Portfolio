@@ -22,7 +22,9 @@ class ProjectForm extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('summary', TextareaType::Class)
-            ->add('description', TextareaType::Class)
+            ->add('description', TextareaType::Class,[
+                'attr' => ["class" => "description-input"]
+            ])
             ->add('date', DateType::Class)
             ->add('roles', EntityType::class, array (
                 'class'   => Role::class,

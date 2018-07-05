@@ -30,16 +30,13 @@
             color: rgb(187, 187, 187);
             font-size: 22px;
             &:hover {
-                color: rgb(119, 119, 119);
+                // color: rgb(119, 119, 119);
                 cursor: pointer;
             }
         }
 
         .selected {
             color: $secondary-color;
-            &:hover {
-                color: rgb(187, 187, 187);
-            }
         }
     }
 
@@ -266,11 +263,11 @@
             .meta-data {
                 padding-bottom: 7px;
                 padding-left: 30px;
-                .context{
-                    padding-left: 15px;
+                .date{
+                    padding-right: 15px;
                 }
-                .role {
-                    padding-left: 5px;
+                .context, .role {
+                    color: $secondary-color;
                 }
             }
         }

@@ -285,16 +285,10 @@ form {
 
     .filter{
         cursor: pointer;
-        &:hover{
-            color: $secondary-color;
-        }
     }
 
     .active {
         color: $secondary-color;
-        &:hover{
-            color: white;
-        }
     }
 
     h1 {

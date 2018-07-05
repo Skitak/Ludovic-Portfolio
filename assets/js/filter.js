@@ -1,5 +1,5 @@
-import { EHOSTUNREACH } from "constants";
-
+var roles = []
+var context = []
 export default function filter(){
     $(".filter").on("click",function(e){
         if ($(this).hasClass("active"))
@@ -61,7 +61,6 @@ function assignButtonEvents(){
             $(this).removeClass("selected")
             removeContext($(this).text())
         } else { 
-            $(".context .filter-button").removeClass("selected")
             $(this).addClass("selected")
             addContext($(this).text())
         }
@@ -73,23 +72,58 @@ function assignButtonEvents(){
             removeRole($(this).text())
         } else { 
             $(this).addClass("selected")
-            changeRole($(this).text())
+            addRole($(this).text())
         }
     })
 }
 
 function removeContext(value){
-
+    context.splice(context.indexOf(value), 1)
+    modifyProjectVisibility()
 }
 
 function addContext(value){
-
+    context.push(value)
+    modifyProjectVisibility()
 }
 
 function removeRole(value) {
-
+    roles.splice(roles.indexOf(value), 1)
+    modifyProjectVisibility()
 }
 
-function changeRole(value){
+function addRole(value){
+    roles.push(value)
+    modifyProjectVisibility()
+}
 
+function modifyProjectVisibility(){
+    $(".project").each(function(){
+        if (hasRole($(this)) && hasContext($(this)))
+            $(this).removeClass("not-visible")
+        else if (!$(this).hasClass("not-visible"))
+            $(this).addClass("not-visible")
+    })
+}
+
+function hasRole(obj){
+    if (roles.length == 0)
+    return true
+    let found = false
+    obj.find(".role").each(function(){
+        if (roles.indexOf($(this).text()) != -1)
+            found = true
+    })
+    return found
+}
+
+function hasContext(obj){
+    if (context.length == 0)
+    return true
+    let found = false
+    obj.find(".context").each(function(){
+        if (context.indexOf($(this).text()) != -1)
+            found = true
+    })
+    return found
 }

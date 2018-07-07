@@ -1,6 +1,8 @@
 <article class="front-project">
     <div class="caroussel-wrapper">
-        <img src="{{ asset('/images/projets/' ~ project.frontImage.image) }}"/>
+        {% for image in project.images %}
+        <img src="{{ asset('/images/projets/' ~ image.image) }}"/>
+        {% endfor %}
     </div>
     <header> <h1>{{ project.name }}</h1> 
         <div class="meta-data">

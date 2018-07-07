@@ -1,10 +1,5 @@
 import {ajaxFetchInformations} from "./ajaxUtils"
 
-export default function indexFocus(){
-    setupWrapper()
-    ajaxFetchInformations($(".id"), ".front-project-wrapper")
-    upArrow()
-}
 var isArrowVisible = false
 
 function setupWrapper(){
@@ -28,4 +23,21 @@ function upArrow(){
         }
 
     })
+}
+
+function fetchSuccess(data){
+    $(".caroussel-wrapper").slick({
+        dots: true,
+        slidesToShow: 1,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    })
+}
+
+
+export default function indexFocus(){
+    setupWrapper()
+    ajaxFetchInformations($(".id"), ".front-project-wrapper", fetchSuccess)
+    upArrow()
 }

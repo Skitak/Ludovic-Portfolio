@@ -1,6 +1,6 @@
 import {ajaxForm, ajaxDelete} from './ajaxUtils';
 import Quill from "quill"
-import slick from "slick"
+import 'slick-carousel'
 
 export default function projectForm() { 
     if( !$('.project-edit-wrapper').length)
@@ -118,5 +118,11 @@ function swapImageOrder(event){
 }
 
 function setSlider(){
-    // $('.caroussel-wrapper').slick()
+    $('.caroussel-wrapper').slick({
+        dots: true,
+        slidesToShow: 1,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    })
 }

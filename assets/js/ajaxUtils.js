@@ -90,7 +90,7 @@ export function ajaxDelete(selector, parentHeight = 0, demandConfirmation = true
     })
 }
 
-export function ajaxFetchInformations(link, wrapper){
+export function ajaxFetchInformations(link, wrapper, onSuccess = null){
     link.on("click", function(e){
         e.preventDefault()
         putLoadingIcon(wrapper)
@@ -101,6 +101,8 @@ export function ajaxFetchInformations(link, wrapper){
                 $(wrapper).html(data).children().on("click", function(e){
                     e.stopPropagation()
                 })
+                if (onSuccess != null)
+                onSuccess(data)
             },
             error: function (errorMessage){
                 error(errorMessage)

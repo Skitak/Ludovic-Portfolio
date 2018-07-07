@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Image
 {
@@ -45,6 +47,12 @@ class Image
      * @ORM\JoinColumn(nullable=false)
      */
     private $project;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $displayOrder;
+
 
     public function getId()
     {
@@ -85,5 +93,26 @@ class Image
         $this->project = $project;
 
         return $this;
+    }
+
+    public function getDisplayOrder(): ?int
+    {
+        return $this->displayOrder;
+    }
+
+    public function setDisplayOrder(int $displayOrder): self
+    {
+        $this->displayOrder = $displayOrder;
+
+        return $this;
+    }
+
+    /** 
+     * @ORM\PostPersist
+     */
+    public function doStuffOnPostPersist(LifecycleEventArgs $args){
+        $this->displayOrder = $this->id;
+        $em = $args->getEntityManager();
+        $em->flush();
     }
 }

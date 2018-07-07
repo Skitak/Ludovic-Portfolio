@@ -27,14 +27,14 @@ class ImageCompressor {
 
     public function resizeImage($filePath, $fileName){ 
         $image = new ImageResize($filePath . $fileName);
-        $image->resize(1600, 900);
+        $image->resize(1600, 900, $allow_enlarge = True);
         $image->save($filePath . $fileName);
         return $filePath;
     }
 
     public function createThumbnail($filePath, $fileName){
         $image = new ImageResize($filePath . $fileName);
-        $image->resizeToWidth(240);
+        $image->resize(400, 225, $allow_enlarge = True);
         $generatedFileName = "min_" . $fileName;
         $image->save($filePath . $generatedFileName);
         return $generatedFileName;
@@ -43,7 +43,7 @@ class ImageCompressor {
 
     public function resizeThumbnail($file){
         $image = new ImageResize($file);
-        $image->resizeToWidth(240);
+        $image->resize(400, 225, $allow_enlarge = True);
         $image->save($file);
     }
 }

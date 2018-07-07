@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Project
 {
@@ -40,12 +42,14 @@ class Project
 
     /**
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\SequenceGenerator(sequenceName="project_seq", initialValue=10)
      */
     private $displayOrder;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="project", orphanRemoval=true)
-     * @ORM\OrderBy({"id" = "DESC"})
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     private $images;
 
@@ -69,7 +73,7 @@ class Project
         $this->images = new ArrayCollection();
         $this->name = $name;
         $this->description = $description;
-        $this->displayOrder = rand(100, 10000);
+        // $this->displayOrder = nextval('project_seq');
         $this->summary = "Descritpion sommaire du projet";
         $this->roles = new ArrayCollection();
         $this->date = new \Datetime();
@@ -234,5 +238,14 @@ class Project
         $this->date = $date;
 
         return $this;
+    }
+
+    /** 
+     * @ORM\PostPersist
+     */
+    public function doStuffOnPostPersist(LifecycleEventArgs $args){
+        $this->displayOrder = $this->id;
+        $em = $args->getEntityManager();
+        $em->flush();
     }
 }

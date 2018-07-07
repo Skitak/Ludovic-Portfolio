@@ -268,6 +268,23 @@ class BackendController extends Controller
     }
 
     /**
+     * @Route("/admin/image/swapOrder/{idA}/{idB}", name="back_image_swapOrder")
+     * 
+     *  Modify project order (AJAX form request)
+     */
+    public function swapOrderimage($idA, $idB){
+        $repo = $this->getDoctrine()->getRepository(Image::class);
+        $projectA = $repo->find($idA);
+        $projectB = $repo->find($idB);
+        $swap = $projectA->getDisplayOrder();
+        $projectA->setDisplayOrder($projectB->getDisplayOrder());
+        $projectB->setDisplayOrder($swap);
+        $this->getDoctrine()->getManager()->flush();
+        
+        return new JsonResponse(["state" => "success", "message" => "Ordre modifié avec success."]);
+    }
+
+    /**
      * @Route("/admin/compte", name="back_account")
      * 
      *  Accout management page

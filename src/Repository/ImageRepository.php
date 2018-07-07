@@ -20,7 +20,7 @@ class ImageRepository extends ServiceEntityRepository
     }
 
     public function findAll(){
-        return $this->findBy(array(), array('id' => 'DESC'));
+        return $this->findBy(array(), array('displayOrder' => 'ASC'));
     }
 
 //    /**

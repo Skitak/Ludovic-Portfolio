@@ -1,6 +1,8 @@
 <div class="project">
     <a class="id" href="{{path('project', {'id' : project.id })}}"></a>
+    {% if project.frontImage is not null %}
     <img src="{{ asset('/images/projets/' ~ project.frontImage.image) }}"/>
+    {% endif %}
     <div class="project-infos">
         <div class="summary">
             <h1>{{ project.name }}</h1>

@@ -1,5 +1,6 @@
 import {ajaxForm, ajaxDelete} from './ajaxUtils';
 import Quill from "quill"
+import Slick from "slick"
 
 export default function projectForm() { 
     if( !$('.project-edit-wrapper').length)
@@ -17,6 +18,8 @@ export default function projectForm() {
 
     ajaxDelete($(".artwork .cross"), 1, false)
     ajaxFront($(".artwork .set-front"))
+    setDragDropOrder($(".gallery .artwork"))
+    setSlider()
     
 }   
 
@@ -70,4 +73,50 @@ function ajaxFront(div){
             }
         })
     })
+}
+
+var draggedDiv
+var isDragging = false
+
+function setDragDropOrder(obj){
+    isDragging = false
+    obj.on("dragover", function(e){
+        e.preventDefault()
+        e.stopPropagation()
+    })
+    obj.on("dragenter", function(e){
+        if (!isDragging){
+            draggedDiv = $(this)
+            isDragging = true;
+        }
+        e.preventDefault()
+        e.stopPropagation()
+    })
+    obj.on("drop", swapImageOrder) 
+}
+
+function swapImageOrder(event){
+    event.preventDefault()
+    let copySelf = $(this).clone()
+    let copyOther = draggedDiv.clone()
+
+    $(this).replaceWith(copyOther)
+    draggedDiv.replaceWith(copySelf)
+
+    let idA = $(this).find(".hidden-id").text()
+    let idB = draggedDiv.find(".hidden-id").text()
+
+    $.ajax({
+        url : window.location.origin + "/admin/image/swapOrder/" + idA + "/" + idB,
+        success: function (data) {console.log(data)},
+        error: function (data, sdj, error) {alert(error)}
+    })
+
+    setDragDropOrder(copySelf)
+    setDragDropOrder(copyOther)
+
+}
+
+function setSlider(){
+    $('.caroussel-wrapper')
 }

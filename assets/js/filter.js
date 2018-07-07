@@ -99,22 +99,22 @@ function addRole(value){
 
 function modifyProjectVisibility(){
     $(".project").each(function(){
-        if (hasRole($(this)) && hasContext($(this)))
+        if (hasAllRoles($(this)) && hasContext($(this)))
             $(this).removeClass("not-visible")
         else if (!$(this).hasClass("not-visible"))
             $(this).addClass("not-visible")
     })
 }
 
-function hasRole(obj){
+function hasAllRoles(obj){
     if (roles.length == 0)
     return true
-    let found = false
+    let foundAll = true
     obj.find(".role").each(function(){
-        if (roles.indexOf($(this).text()) != -1)
-            found = true
+        if (roles.indexOf($(this).text()) == -1)
+            foundAll = false
     })
-    return found
+    return foundAll
 }
 
 function hasContext(obj){

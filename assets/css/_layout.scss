@@ -286,13 +286,15 @@ form {
     flex-direction: column;
     justify-content: flex-start;
     background: rgb(255, 255, 255);
-
-    .filter{
-        cursor: pointer;
-    }
-
-    .active {
-        color: $secondary-color;
+    .centered-header{
+        .filter{
+            cursor: pointer;
+        }
+    
+        .active {
+            color: $secondary-color;
+            border-bottom: 1px $secondary-color solid;
+        }
     }
 
     h1 {
@@ -360,7 +362,7 @@ form {
         width: 100%;
         background-color: rgb(92, 92, 92);
         .centered{
-            width: 1000px;
+            width: 90%;;
             color: white;
         }
     }

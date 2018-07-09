@@ -9,12 +9,15 @@
             <div class="meta-data">
                 <p class="date">{{ project.date|date("M Y") }}</p>
                 <p>Projet <span class="context">{{ project.context.value }}</span>
-                en tant que : {% for role in project.roles %}
-                <span class="role">{{ role.value }}</span>
-                    {% if loop.last %} 
-                    {% elseif loop.revindex0 == 1 %} et {% else %}, 
-                    {% endif %}
-                {% endfor %}</p>
+                en tant que : 
+                    {% for role in project.roles %}
+                        <span class="role">{{ role.value }}</span>
+                        {% if loop.last %} 
+                        {% elseif loop.revindex0 == 1 %} et 
+                        {% else %}, 
+                        {% endif %}
+                    {% endfor %}
+                </p>
             </div>
         </header>
         <hr/>

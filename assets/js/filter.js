@@ -110,8 +110,14 @@ function hasAllRoles(obj){
     if (roles.length == 0)
     return true
     let foundAll = true
+    let objectRoles = []
     obj.find(".role").each(function(){
-        if (roles.indexOf($(this).text()) == -1)
+        objectRoles.push($(this).text())
+        // if (roles.indexOf($(this).text()) == -1)
+        //     foundAll = false
+    })
+    roles.forEach(function(element){
+        if (!objectRoles.includes(element))
             foundAll = false
     })
     return foundAll

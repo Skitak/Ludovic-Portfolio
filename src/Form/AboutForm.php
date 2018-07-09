@@ -17,7 +17,8 @@ class AboutForm extends AbstractType
     {
         $builder
             ->add('aboutTitle', TextType::Class, ['label' => 'Personalisation titre'])
-            ->add('about', TextareaType::Class, ['label' => 'Personalisation a propos'])
+            ->add('about', TextareaType::Class, ['label' => 'Personalisation a propos',
+            'attr' => ["class" => "about-input"]])
             ->add('save', SubmitType::class)
         ;
     }

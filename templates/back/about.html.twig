@@ -2,6 +2,12 @@
 
 {% block title %}{{parent()}} - A propos{% endblock %}
 
+{% block stylesheets %}
+{{parent()}}
+<link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+<link href="https://cdn.quilljs.com/1.0.0/quill.bubble.css" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
 
 
@@ -10,7 +16,13 @@
     <h1>Menu personalisation</h1>
 
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.aboutTitle) }}
+    {# <div class="not-visible"> #}
+        {{ form_row(form.about) }}
+    {# </div> #}
+    <div class="about-editor-wrapper">
+        <div id="about-editor"></div>
+    </div>
     {{ form_end(form) }}
 </div>
 {% endblock %}

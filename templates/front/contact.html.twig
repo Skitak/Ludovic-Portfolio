@@ -4,7 +4,7 @@
         <img src="{{ asset('images/profil.jpg')}}">
         <h1>{{ user.aboutTitle }}</h1>
         <hr class="small-separator"/>
-        <p>{{ user.about }}</p>
+        <div class="quill-edit">{{ user.about | raw }}</div>
     </div>
     <hr class="big-separator"/>
     <div class="contact">

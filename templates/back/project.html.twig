@@ -29,7 +29,7 @@
         {{ form_row(project_form.roles)}}
         {{ form_row(project_form.context)}}
         </div>
-        <div class="not-visible-description">
+        <div class="not-visible">
         {{ form_row(project_form.description, {"class" : "description-input"}) }}
         </div>
         <div class="description-editor-wrapper">
@@ -55,10 +55,6 @@
             {% endfor %}
         </div>
     </div>
-    </div>
+</div>
 
-{% endblock %}
-
-{% block javascripts %}
-{{ parent() }}
 {% endblock %}

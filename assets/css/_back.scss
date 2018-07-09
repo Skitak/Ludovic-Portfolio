@@ -70,6 +70,9 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
+                &.not-visible {
+                    display: none;
+                }
             }
             div.meta-data{
                 flex-direction: row;
@@ -104,9 +107,7 @@
             }
 
 
-            .not-visible-description{
-                display: none;
-            }
+            
 
             label {
                 margin-bottom: 5px;
@@ -312,25 +313,23 @@ $form-account-mini : 600px;
         flex-direction: column;
         align-items: center;
         align-self: center;
-        #about_form {
+        div {
             width: 100%;
             display: flex;
             flex-direction: column;
-            div {
+            label {
+                margin-bottom: 5px;
+                color: grey;
+            }
+            input {
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                label {
-                    margin-bottom: 5px;
-                    color: grey;
-                }
-                input {
-                    width: 100%;
-                    &::-webkit-input-placeholder{
-                        color: rgb(75, 75, 75);
-                    }
+                &::-webkit-input-placeholder{
+                    color: rgb(75, 75, 75);
                 }
             }
+        }
+        .ql-toolbar{
+            flex-direction: row;
         }
     }
 }
@@ -520,3 +519,6 @@ input[type="button"].button-warning:focus {
   border-color: rgb(228, 89, 89); }
 
 
+  .not-visible{
+    display: none;
+}

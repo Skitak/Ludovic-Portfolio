@@ -27,6 +27,10 @@
         }
 
         p{
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
             color: rgb(187, 187, 187);
             font-size: 22px;
             &:hover {
@@ -509,6 +513,60 @@
 
 .caroussel-wrapper{
     overflow: hidden;
+    .slick-arrow{
+        outline: none;
+        -webkit-appearance: none;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0);
+        height: 80px;
+        width: 80px;
+        // transform-origin: 50% 50%;
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background-color: white;
+            right:50%;
+            transform-origin: top right;
+            transition: all 0.15s cubic-bezier(0.62, 2.22, 0.66, 0.38); 
+        }
+
+        &::before{
+            top: 50%;
+            transform: rotate(45deg);
+        }
+        &::after{
+            top: 50%;
+            transform: rotate(-45deg);
+        }
+
+        &:hover{
+            &::before{
+                transform: rotate(30deg);
+            }
+            &::after{
+                transform: rotate(-30deg);
+            }
+        }
+
+        &::-moz-focus-inner {
+            border: 0;
+        }
+
+        &:active{
+
+            &::before{
+                transform: rotate(10deg);
+            }
+            &::after{
+                transform: rotate(-10deg);
+            }
+        }
+
+    }
     .slick-next {
         position: absolute;
         right: 20px;
@@ -520,7 +578,7 @@
         position: absolute;
         left: 20px;
         top: 50%;
-        transform: translate(0,-50%);
+        transform: translate(0,-50%) rotate(-180deg);
         z-index: 2;
     }
     .slick-dots{
@@ -531,5 +589,23 @@
         align-self: center;
         margin: auto;
         margin-top: 20px;
+        li {
+            button {
+                cursor: pointer;
+                outline: none;
+                border: 0;
+                background-color: rgb(117, 117, 117);
+                width: 12px;
+                height: 12px;
+                border-radius: 100%;
+                color: rgba(255, 255, 255, 0);
+                &::-moz-focus-inner {
+                    border: 0;
+                }
+            }
+            &.slick-active button{
+                background: rgb(37, 37, 37);
+            }
+        }
     }
 }

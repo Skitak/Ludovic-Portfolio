@@ -21,7 +21,7 @@
                 <h2>Game designer</h2>
             </div>
             <nav>
-                <a class="filter">FILTER</a>
+            {% block navigation %}{% endblock %}
                 <a class="contact-button" href="{{path('contact')}}">CONTACT</a>
                 <a class="resume" href="{{path('cv', {'lang' : 'en' })}}">RESUME</a>
             </nav>

@@ -9,7 +9,7 @@
                 <h2>Game designer</h2>
             </div>
             <nav>
-                <a class="filter">FILTRE</a>
+                <a class="filter">FILTER</a>
                 <a class="contact-button" href="{{path('contact')}}">CONTACT</a>
                 <a class="resume" href="{{path('cv')}}">RESUME</a>
             </nav>
@@ -21,6 +21,7 @@
     <footer>
         <div class="centered">
             <p>© {{ "now"|date("Y")}} ludovicmoge.com - Ludovic Moge</p>
+            <p><a href="{{path('contact')}}"> Contact me </a></p>
         </div>
     </footer>
 {% endblock %}

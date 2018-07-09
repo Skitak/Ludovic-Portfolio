@@ -22,6 +22,11 @@ body, html {
     margin: 0px;
     position: relative;
     min-height: 100%;
+    overflow-x: hidden;
+}
+
+html{
+    height: 100%;
 }
 
 ul {
@@ -32,23 +37,11 @@ a {
     text-decoration: none;
 }
 
-body, html {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-}
-
 p {
     margin: 0px;
     padding: 0px;
     font-family: "Open Sans";
 }
-
-div{
-    display: flex;
-}
-
 .hidden-id {
     display: none;
 }
@@ -347,11 +340,30 @@ form {
                 align-items: center;
                 justify-content: space-between;
                 align-self: center;
-                width: 300px;
+                width: 350px;
                 a {
                     color: white;
                     font-family: $secondary-font;
                 }
+            }
+
+            @media screen and (max-width: 730px) {
+                flex-direction: column;
+                nav {
+                    align-self: center;
+                    margin: 10px 0px 20px 0px;
+                }
+            }
+
+            @media screen and (max-width: 400px){
+                .title{
+                    align-self: center;
+                }
+                nav {
+                    width: 100%;
+                    padding: 0px 10px;
+                }
+                
             }
         }
         
@@ -370,6 +382,9 @@ form {
         .centered{
             width: 90%;;
             color: white;
+            a{
+                color: $secondary-color;
+            }
         }
     }
 }

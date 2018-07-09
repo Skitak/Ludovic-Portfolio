@@ -22,6 +22,7 @@
         }
 
         .context, .roles {
+            display: flex;
             width: 80%;
             justify-content: space-between;
         }
@@ -41,6 +42,34 @@
 
         .selected {
             color: $secondary-color;
+        }
+        @media screen and (max-width: 800px) {
+            flex-direction: row;
+            width: 100%;
+            padding: 0px 30px;
+            margin: 20px 0px 0px 0px;
+            justify-content: space-between;
+            .context, .roles{
+                width: 150px;
+                flex-direction: column;
+                p{
+                    margin-bottom: 10px;
+                }
+            }
+            .roles{
+                text-align: right;
+            }
+            hr {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 450px) {
+            p{
+                font-size: 12px;
+            }
+            hr {
+                display: none;
+            }
         }
     }
 
@@ -80,8 +109,7 @@
                 opacity: 0;
                 height: 100%;
                 width: 100%;
-                padding-bottom: 25px;
-                padding-left: 50px;
+                padding: 25px 50px;
                 position: absolute;
                 bottom: 0px;
                 display: flex;
@@ -91,7 +119,7 @@
                 transition: all 0.1s linear;
                 hr{
                     margin: 0px 0px;
-                    background-color: rgb(63, 63, 63);
+                    background-color: rgb(168, 168, 168);
                     margin-left: -10px;
                     width: 60%;
                 }
@@ -108,11 +136,11 @@
                         font-size: 28px;
                     }
                     .meta-data {
-                        display: flex;
+                        display: none;
                         flex-direction: row;
                         flex-wrap: nowrap;
                         padding-left: 85px;
-                        padding-top: 3px;
+                        padding-bottom: 3px;
                         width: 100%;
                         .date{
                             padding-right: 5px;
@@ -132,9 +160,13 @@
                     font-size: 14px;
                 }
 
-                
+                @media screen and (max-width: 1200px) {
+                    padding: 5px 5px;
+                    h1 {
+                        font-size: 18px;
+                    }
+                }
 
-                
             }
         }
         .primary-project-wrapper{
@@ -146,6 +178,9 @@
             align-items: center;
             .project{
                 width: 100%;
+                .project-infos .meta-data{
+                    display: flex;
+                }
             }
         }
 
@@ -155,6 +190,7 @@
             background: rgb(170, 170, 170);
             border: 0;
             margin: 25px 0px;
+            z-index: 3
         }
 
         .secondary-projects-wrapper {
@@ -168,6 +204,10 @@
                 width: 49%;
                 display: flex;
                 flex-direction: column;
+                
+                .project-infos .meta-data{
+                    display: none;
+                }
 
             }
         }
@@ -187,6 +227,9 @@
                     min-width: 100%;
                     height: auto;
                 }
+                .project-infos .meta-data{
+                    display: none;
+                }
             }
         }
 
@@ -199,7 +242,7 @@
         justify-content: space-between;
         width: 90%;
         hr{
-            display: none;
+            // display: none;
         }
 
         .project{
@@ -242,15 +285,21 @@
     .front-project{
         margin-top: 20px;
         margin-bottom: 50px;
-        width: 1350px;
+        width: 1282px;
         background-color: white;
         border: 1px rgb(0, 0, 0) solid;
         box-shadow: 0px 0px 25px rgb(136, 136, 136);
         .caroussel-wrapper{
-            width: 100%;
+            width: 1280px;
+            // height: 720px;
+            position: relative;
             display: block;
+            .slick-track{
+                display: flex;
+            }
             img{
                 width: 100%;
+                height: auto;
                 vertical-align: top;
             }
         }
@@ -344,15 +393,27 @@
         }
     
         .contact{
+            display: flex;
             flex-direction: column;
             align-items: center;
             width: 90%;
+            .contact-informations{
+                display: flex;
+                flex-direction: column;
+                p{
+                    margin: 10px 0px;
+                    a {
+                        color: $secondary-color;
+                    }
+                }
+            }
             form, #form{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
                 div {
+                    display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     width: 100%;
@@ -365,6 +426,7 @@
                     }
                 }
                 div.person-informations{
+                    display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     padding: 0px;
@@ -386,6 +448,7 @@
         }
     
         .resume{
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
@@ -460,13 +523,18 @@
     }
     h1{
         font-size: 38px;
+        line-height: 42px;
+        margin: 12px 0px;
     }
     h2{
         font-size: 28px;
+        line-height: 36px;
+        margin: 6px 0px;
     }
     p{
         flex-shrink: 1;
-        // font-size: 16px;
+        font-size: 14px;
+        line-height: 24px;
         width: 100%;
         height: auto;
         word-break: break-word;
@@ -482,10 +550,10 @@
         font-size: 12px;
     }
     .ql-size-large{
-        font-size: 20px;
+        font-size: 16px;
     }
     .ql-size-huge{
-        font-size: 24px;
+        font-size: 18px;
     }
     ol, ul{
         padding-left: 40px;
@@ -522,6 +590,7 @@
         color: rgba(255, 255, 255, 0);
         height: 80px;
         width: 80px;
+        z-index: -1;
         // transform-origin: 50% 50%;
         &::before, &::after{
             content: "";

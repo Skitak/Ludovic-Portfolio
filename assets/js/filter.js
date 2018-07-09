@@ -31,7 +31,7 @@ function removeContainers(){
         $(this).appendTo(".projects")
     })
     $(".primary-project-wrapper").remove()
-    $(".projects hr").remove()
+    $(".projects > hr").remove()
     $(".secondary-projects-wrapper").remove()
     $(".all-projects-wrapper").remove()
     
@@ -108,7 +108,7 @@ function modifyProjectVisibility(){
 
 function hasAllRoles(obj){
     if (roles.length == 0)
-    return true
+        return true
     let foundAll = true
     let objectRoles = []
     obj.find(".role").each(function(){

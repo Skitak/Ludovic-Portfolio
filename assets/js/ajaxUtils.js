@@ -98,7 +98,8 @@ export function ajaxFetchInformations(link, wrapper, onSuccess = null){
         $.ajax({
             url: urlIndex,
             success: function (data){
-                $(wrapper).html(data).children().on("click", function(e){
+                $(wrapper).html(data).
+                children().on("click", function(e){
                     e.stopPropagation()
                 })
                 if (onSuccess != null)

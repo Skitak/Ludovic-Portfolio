@@ -15,8 +15,8 @@
                 <div class="image-wrapper">
                     <a class="edit" href="{{ path('back_project', {'id' : project.id }) }}">
                         <img
-                        {% if project.frontImage is not empty %} 
-                            src="{{ asset('/images/projets/' ~ project.frontImage.thumbnail) }}"
+                        {% if project.images[0] is defined %} 
+                            src="{{ asset('/images/projets/' ~ project.images[0].thumbnail) }}"
                         {% else %}
                             src="{{ asset('/images/' ~ 'template.jpg')}}"
                         {% endif %}

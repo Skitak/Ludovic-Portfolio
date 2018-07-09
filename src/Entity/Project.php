@@ -77,6 +77,7 @@ class Project
         $this->summary = "Descritpion sommaire du projet";
         $this->roles = new ArrayCollection();
         $this->date = new \Datetime();
+        $this->displayOrder = 0;
     }
 
     public function getId()

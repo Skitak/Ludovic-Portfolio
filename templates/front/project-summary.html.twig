@@ -1,19 +1,24 @@
 <div class="project">
     <a class="id" href="{{path('project', {'id' : project.id })}}"></a>
-    {% if project.frontImage is not null %}
-    <img src="{{ asset('/images/projets/' ~ project.frontImage.image) }}"/>
+    {% if project.images[0] is defined  %}
+    <img src="{{ asset('/images/projets/' ~ project.images[0].image) }}"/>
+    {% else %}
+    <img src="{{ asset('/images/template.jpg') }}"/>
     {% endif %}
     <div class="project-infos">
         <header>
             <h1>{{ project.name }}</h1>
             <div class="meta-data">
                 <p class="date">{{ project.date|date("M Y") }}</p>
-                <p>Projet <span class="context">{{ project.context.value }}</span>
-                en tant que : 
+                <p> 
+                {% if project.context is not empty %}
+                <span class="context">{{ project.context.value }}</span> project 
+                {% endif %}
+                as a : 
                     {% for role in project.roles %}
                         <span class="role">{{ role.value }}</span>
                         {% if loop.last %} 
-                        {% elseif loop.revindex0 == 1 %} et 
+                        {% elseif loop.revindex0 == 1 %} and 
                         {% else %}, 
                         {% endif %}
                     {% endfor %}

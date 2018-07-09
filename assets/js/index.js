@@ -5,6 +5,7 @@ var isArrowVisible = false
 function setupWrapper(){
     $(".front-project-wrapper").on("click", function(){
         $(this).addClass("not-visible")
+        $(".contact-button").removeClass("active")
     }).on("scroll", function(e){
         e.preventDefault()
     })
@@ -32,6 +33,7 @@ function fetchSuccess(data){
         infinite: true,
         autoplay: true,
         autoplaySpeed: 2000,
+        // adaptiveHeight: true
     })
 }
 

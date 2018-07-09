@@ -163,7 +163,13 @@
                 @media screen and (max-width: 1200px) {
                     padding: 5px 5px;
                     h1 {
-                        font-size: 18px;
+                        font-size: 14px;
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                    hr{
+                        margin-left: 0px;
                     }
                 }
 
@@ -453,20 +459,22 @@
             align-items: center;
             justify-content: flex-start;
             width: 100%;
-            p{
-                line-height: 12px;
-                text-align: center;
-                margin-bottom: 40px;
-            }
-            a{
-                $size: 80px;
-                width: $size;
-                height: $size;
-                text-align: center;
-    
-                img{
-                    width: $size;
-                    height: $size;
+            .download-links{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 200px;
+                    height: 50px;
+                    border: 2px #d1d1d1 solid;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-family: "Open Sans";
+                    color: black;
                 }
             }
             h1 {

@@ -1,8 +1,4 @@
-{% extends 'front/base.html.twig' %}
-
-{% block body %}
-<div class="front-project-wrapper visible">
-    <article class="front-project">
+<article class="front-project">
     <div class="caroussel-wrapper">
         {% for image in project.images %}
         <img src="{{ asset('/images/projets/' ~ image.image) }}"/>
@@ -28,9 +24,3 @@
     </header>
     <div class="description quill-edit">{{ project.description | raw }}</div>
 </article>
-</div>
-
-{% endblock %}
-
-
-{% block javascripts %} {{ parent() }} {% endblock %}

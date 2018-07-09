@@ -3,12 +3,17 @@ import {ajaxFetchInformations} from "./ajaxUtils"
 var isArrowVisible = false
 
 function setupWrapper(){
-    $(".front-project-wrapper").on("click", function(){
-        $(this).addClass("not-visible")
-        $(".contact-button").removeClass("active")
-    }).on("scroll", function(e){
-        e.preventDefault()
-    })
+    if ($(".caroussel-wrapper").length)
+        addCaroussel()
+    else {
+        $(".front-project-wrapper").on("click", function(){
+            $(this).removeClass("visible")
+            $(".contact-button").removeClass("active")
+        }).on("scroll", function(e){
+            e.preventDefault()
+        })
+    }
+    return
 }
 
 function upArrow(){
@@ -26,7 +31,7 @@ function upArrow(){
     })
 }
 
-function fetchSuccess(data){
+function addCaroussel(data = null){
     $(".caroussel-wrapper").slick({
         dots: true,
         slidesToShow: 1,
@@ -40,6 +45,6 @@ function fetchSuccess(data){
 
 export default function indexFocus(){
     setupWrapper()
-    ajaxFetchInformations($(".id"), ".front-project-wrapper", fetchSuccess)
+    ajaxFetchInformations($(".id"), ".front-project-wrapper", addCaroussel)
     upArrow()
 }

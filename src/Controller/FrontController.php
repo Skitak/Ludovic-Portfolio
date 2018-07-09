@@ -45,7 +45,12 @@ class FrontController extends Controller
     /**
      *  @Route ("/project/{id}", name="project")
      */
-    public function project(Project $project) {
+    public function project(Project $project, Request $request) {
+        if ($request->isXmlHttpRequest()){
+            return $this->render('front/project-ajax.html.twig', [
+                "project" => $project
+            ]);
+        }
         return $this->render('front/project.html.twig', [
             "project" => $project
         ]);
@@ -64,28 +69,36 @@ class FrontController extends Controller
             ->add('envoyer' , SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
-
-        if ($request->isXmlHttpRequest() && $form->isSubmitted()){
-            if ($form->isValid()) {
-                $data = $form->getData();
-                $message = (new \Swift_Message('Hello Email'))
-                    ->setFrom($data["email"])
-                    ->setTo('bastienbouquin@gmail.com')
-                    ->setBody(
-                        $this->renderView(
-                            'front/email.html.twig',
-                            ['nom' => $data['nom'] , 'message' => $data["message"]]
-                        ),
-                        'text/html'
-                    );
-                $mailer->send($message);
-
-                return new JsonResponse(["state" => "success", "message" => "Votre email a bien été envoyé."]);
-            }
-            return new JsonResponse(["state" => "error", "message" => (string)$form->getErrors(true)]);
-        }
-
         $user = $this->getDoctrine()->getRepository(User::class)->findAll()[0];
+
+        if ($request->isXmlHttpRequest()){
+            if ($form->isSubmitted()){
+                if ($form->isValid()) {
+                    $data = $form->getData();
+                    $message = (new \Swift_Message('Hello Email'))
+                        ->setFrom($data["email"])
+                        ->setTo('bastienbouquin@gmail.com')
+                        ->setBody(
+                            $this->renderView(
+                                'front/email.html.twig',
+                                ['nom' => $data['nom'] , 'message' => $data["message"]]
+                            ),
+                            'text/html'
+                        );
+                    $mailer->send($message);
+    
+                    return new JsonResponse(["state" => "success", "message" => "Your email has been sent."]);
+                }
+                else {
+                    return new JsonResponse(["state" => "error", "message" => (string)$form->getErrors(true)]);
+                }
+            } else {
+                return $this->render('front/contact-ajax.html.twig', [
+                    "user" => $user,
+                    "form" =>$form->createView(),
+                ]);  
+            }
+        }
         return $this->render('front/contact.html.twig', [
             "user" => $user,
             "form" =>$form->createView(),
@@ -93,11 +106,18 @@ class FrontController extends Controller
     }
 
     /**
-     *  @Route ("/download", name="cv")
+     *  @Route ("/download/{lang}", name="cv")
      */
-    public function cv(){
-        $response = new BinaryFileResponse($this->getParameter('cv_path'));
-        $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,'pdf.pdf');
+    public function cv(Request $request){
+        $reponse;
+        if ($request->query->get('name') == "fr"){
+            $response = new BinaryFileResponse($this->getParameter('cv_path_fr'));
+            $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,'MogeLudovicCV_fr.pdf');
+        }
+        else {
+            $response = new BinaryFileResponse($this->getParameter('cv_path_en'));
+            $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,'MogeLudovicResume_en.pdf');
+        }
         return $response;
     }
 

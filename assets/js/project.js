@@ -123,6 +123,15 @@ function setSlider(){
         slidesToShow: 1,
         infinite: true,
         autoplay: true,
+        arrows: true,
         autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    arrows: false
+                }
+            },
+        ]
     })
 }

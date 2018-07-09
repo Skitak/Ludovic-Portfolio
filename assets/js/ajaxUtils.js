@@ -91,6 +91,8 @@ export function ajaxDelete(selector, parentHeight = 0, demandConfirmation = true
 }
 
 export function ajaxFetchInformations(link, wrapper, onSuccess = null){
+    if (window.innerWidth < 900)
+        return
     link.on("click", function(e){
         e.preventDefault()
         putLoadingIcon(wrapper)
@@ -107,13 +109,13 @@ export function ajaxFetchInformations(link, wrapper, onSuccess = null){
             },
             error: function (errorMessage){
                 error(errorMessage)
-                $(wrapper).addClass("not-visible")
+                $(wrapper).removeClass("visible")
             }
         })
     })
 }
 
 function putLoadingIcon(wrapper){
-    $(wrapper).html("<div class='loading-icon'></div>").removeClass("not-visible")
+    $(wrapper).html("<div class='loading-icon'></div>").addClass("visible")
     
 }

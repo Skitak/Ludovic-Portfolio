@@ -16,13 +16,14 @@
     <header>
         <div class="centered-header">
             <div class="title">
+            <a href="{{path('index')}}"></a>
                 <h1>Ludovic Moge</h1>
                 <h2>Game designer</h2>
             </div>
             <nav>
                 <a class="filter">FILTER</a>
                 <a class="contact-button" href="{{path('contact')}}">CONTACT</a>
-                <a class="resume" href="{{path('cv')}}">RESUME</a>
+                <a class="resume" href="{{path('cv', {'lang' : 'en' })}}">RESUME</a>
             </nav>
         </div>
     </header>

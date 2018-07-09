@@ -8,23 +8,24 @@
     </div>
     <hr class="big-separator"/>
     <div class="contact">
-        <h1>Contactez-moi</h1>
+        <h1>Contact me</h1>
         <div class="contact-informations">
             <p>(+33) 6 33 07 09 23</p>
             <p><a href="mailto:ludovic.moge@gmail.com" target="_top">ludovic.moge@gmail.com</a></p>
         </div>
         {{ form_start(form) }}
         <div class="person-informations">
-        {{ form_row(form.nom) }}
+        {{ form_row(form.nom, {"label" : "Name"}) }}
         {{ form_row(form.email) }}
         </div>
-        {{ form_row(form.objet) }}
+        {{ form_row(form.objet, {"label" : "Subject"}) }}
         {{ form_row(form.message) }}
+        {{ form_widget(form.envoyer, {"label" : "Send"}) }}
         {{ form_end(form) }}
     </div>
     <hr class="big-separator"/>
     <div class="resume">
-        <h1>CV</h1>
+        <h1>Resume</h1>
         <div class="download-links">
             <a href="{{path('cv')}}">English</a>
             <a href="{{path('cv')}}">Français</a>

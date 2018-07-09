@@ -1,6 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block bodyclass %}front-body{% endblock %}
-{% block stylesheets %}{{ parent() }}{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122027599-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122027599-1');
+</script>
+{% endblock %}
 {% block header %}
     <header>
         <div class="centered-header">

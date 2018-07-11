@@ -3,7 +3,8 @@
 parameters:
     locale: 'en'
     images_path: '%kernel.project_dir%/public/images/projets/'
-    cv_path: '%kernel.project_dir%/public/images/cv.pdf'
+    cv_path_fr: '%kernel.project_dir%/public/images/MogeLudovicCV_fr.pdf'
+    cv_path_en: '%kernel.project_dir%/public/images/MogeLudovicResume_en.pdf'
 
 services:
     # default configuration for services in *this* file

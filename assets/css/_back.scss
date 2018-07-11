@@ -334,6 +334,9 @@ $form-account-mini : 600px;
         .ql-toolbar{
             flex-direction: row;
         }
+        .not-visible {
+            display: none;
+        }
     }
 }
 

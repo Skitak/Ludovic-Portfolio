@@ -314,6 +314,9 @@ form {
         align-items: flex-start;
         justify-content: center;
         background-color: rgb(92, 92, 92);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
         .centered-header{
             display: flex;
             flex-direction: row;

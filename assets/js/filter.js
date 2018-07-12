@@ -22,6 +22,7 @@ function closeFilterMenu(){
     $(".filter").removeClass("active")
     $(".filters-menu").removeClass("active")
     $(".projects").removeClass("filtered")
+    $(".project").removeClass("not-visible")
     $(".filter-button").removeClass("selected")
     addContainers()
 }
@@ -61,6 +62,7 @@ function assignButtonEvents(){
             $(this).removeClass("selected")
             removeContext($(this).text())
         } else { 
+            $(".context .filter-button").removeClass("selected")
             $(this).addClass("selected")
             addContext($(this).text())
         }
@@ -83,6 +85,7 @@ function removeContext(value){
 }
 
 function addContext(value){
+    context = []
     context.push(value)
     modifyProjectVisibility()
 }

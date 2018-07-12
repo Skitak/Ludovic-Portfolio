@@ -90,9 +90,20 @@ export function ajaxDelete(selector, parentHeight = 0, demandConfirmation = true
     })
 }
 
-export function ajaxFetchInformations(link, wrapper, onSuccess = null){
-    if (window.innerWidth < 900)
-        return
+export function ajaxFetchInformations(link, wrapper, onSuccess){
+    if (window.innerWidth > 900)
+        fetchOnClick(link, wrapper, onSuccess)
+    $(window).on('resize', function(){
+        
+        if (window.innerWidth < 900){
+            link.off("click")
+            return
+        }
+        else fetchOnClick(link, wrapper, onSuccess)
+    })
+}
+
+function fetchOnClick(link, wrapper, onSuccess){
     link.on("click", function(e){
         e.preventDefault()
         putLoadingIcon(wrapper)

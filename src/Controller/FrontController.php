@@ -110,7 +110,7 @@ class FrontController extends Controller
      */
     public function cv(Request $request){
         $reponse;
-        if ($request->query->get('name') == "fr"){
+        if (strcmp($request->query->get('name'),"fr")){
             $response = new BinaryFileResponse($this->getParameter('cv_path_fr'));
             $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,'MogeLudovicCV_fr.pdf');
         }

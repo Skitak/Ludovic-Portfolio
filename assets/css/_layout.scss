@@ -276,13 +276,14 @@ form {
 }
 
 .front-body {
-    $footer-size: 80px;
+    $small-footer-size: 80px;
+    $big-footer-size: 150px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     background: rgb(255, 255, 255);
     //footer absolute position compensation
-    padding-bottom: $footer-size;
+    padding-bottom: $small-footer-size;
     .centered-header{
         .filter{
             cursor: pointer;
@@ -322,11 +323,9 @@ form {
             flex-direction: row;
             justify-content: space-between;
             width: 90%;
-            .title {
+            .logo {
                 display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                color: white;
+                flex-direction: row;
                 margin: 5px 0px 10px 0px;
                 a {
                     position: absolute;
@@ -335,12 +334,23 @@ form {
                     cursor: pointer;
                     z-index: 2;
                 }
-                h1 {
-                    font-size: 32px;
+                img{
+                    width: 66px;
+                    height: 64px;
                 }
-                h2 {
-                    font-size: 18px;
-                    color: rgb(223, 223, 223);
+                .title{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    color: white;
+                    margin: 0px 0px 0px 20px;
+                    h1 {
+                        font-size: 32px;
+                    }
+                    h2 {
+                        font-size: 18px;
+                        color: rgb(223, 223, 223);
+                    }
                 }
             }
             nav {
@@ -381,7 +391,7 @@ form {
     footer{
         position: absolute;
         bottom: 0px;
-        height: $footer-size;
+        height: $small-footer-size;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -389,11 +399,50 @@ form {
         width: 100%;
         background-color: rgb(92, 92, 92);
         .centered{
+            display: flex;
+            flex-direction: column;
             width: 90%;;
             color: white;
             a{
                 color: $secondary-color;
             }
+
+            
+        }
+        .return{
+            display: none;
+            width: 200px;
+            height: 30px;
+            color: white;
+            border: 2px rgb(235, 235, 235) solid;
+            align-self: center;
+            margin: 20px 0px;
+
+            a{
+                display: flex;
+                color: white;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        padding-bottom: $big-footer-size;
+        footer{
+            height: $big-footer-size;
+            .centered{
+                height: 100%;
+                width: 100%;
+                padding: 5px;
+            }
+            .return{
+                display: flex;
+            }
+
         }
     }
 }

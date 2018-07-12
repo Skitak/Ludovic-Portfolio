@@ -496,7 +496,7 @@
         }
         @media screen and (max-width: 1450px) {
             width: 90%;
-            margin:0px;
+            margin:20px 0px;
             border: 0;
             .caroussel-wrapper{
                 width: 100%;
@@ -504,6 +504,7 @@
         }
 
         @media screen and (max-width: 900px) {
+            margin: 0px;
             width: 100%;
         }
 
@@ -530,6 +531,7 @@
     }
     @media screen and (max-width: 900px) {
         position: relative;
+        overflow-y: hidden;
     }
 
 }
@@ -856,7 +858,7 @@
             position: absolute;
             width: 50px;
             height: 4px;
-            background-color: white;
+            background-color: rgba(211, 211, 211, 0.685);
             right:50%;
             transform-origin: top right;
             transition: all 0.15s cubic-bezier(0.62, 2.22, 0.66, 0.38); 

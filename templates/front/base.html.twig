@@ -15,15 +15,18 @@
 {% block header %}
     <header>
         <div class="centered-header">
-            <div class="title">
-            <a href="{{path('index')}}"></a>
-                <h1>Ludovic Moge</h1>
-                <h2>Game designer</h2>
+            <div class="logo">
+                <a href="{{path('index')}}"></a>
+                <img src="{{asset('images/logo.png')}}" alt="logo"/>
+                <div class="title">
+                    <h1>Ludovic Moge</h1>
+                    <h2>Game designer</h2>
+                </div>
             </div>
             <nav>
             {% block navigation %}{% endblock %}
                 <a class="contact-button" href="{{path('contact')}}">CONTACT</a>
-                <a class="resume" href="{{path('cv', {'lang' : 'en' })}}">RESUME</a>
+                <a class="resume" href="{{asset('/images/MogeLudovicResume_en.pdf')}}" target="_blank">RESUME</a>
             </nav>
         </div>
     </header>
@@ -32,6 +35,7 @@
 {% block footer %}
     <footer>
         <div class="centered">
+            <p class="return"><a href="{{path('index')}}">Back</a></p>
             <p>© {{ "now"|date("Y")}} ludovicmoge.com - Ludovic Moge</p>
             <p><a href="{{path('contact')}}"> Contact me </a></p>
         </div>
